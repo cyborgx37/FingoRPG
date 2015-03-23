@@ -1,0 +1,13 @@
+
+#Files
+
+.ftppass
+.ftpauth
+.sublime*
+
+#Directories
+
+compiled/
+node_modules/
+resources/
+.grunt/
