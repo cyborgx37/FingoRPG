@@ -1,5 +1,4 @@
-define(['libs/crafty', './gamecore'],function(Crafty,game){
-
+define(['libs/crafty', './gamecore', './assets'],function(Crafty,game,assets){
 
 	Crafty.scene( 'Level_01', function(){
 		var i, x, y, trees, flowers;
@@ -40,36 +39,12 @@ define(['libs/crafty', './gamecore'],function(Crafty,game){
 
 
 	Crafty.scene( 'Loading', function(){
-
 		Crafty.e('2D, DOM, Text')
 			.text('Loading...')
 			.attr({ x: 0, y: game.height()/2 - 24, w: game.width() })
 			.css({'text-align': 'center'});
 
 		// Load our sprite map image
-		var assets = {
-			"sprites": {
-				"forest.gif": {
-					"tile": game.grid.tileWidth,
-					"tileh": game.grid.tileHeight,
-					"map": {
-						"Sprite_Grass": 	[0,0],
-						"Sprite_Flowers1": 	[0,1],
-						"Sprite_Flowers2": 	[1,1],
-						"Sprite_Flowers3": 	[1,0],
-						"Sprite_Tree": 		[0,8,2,2],
-						"Sprite_Log": 		[7,3,2,1]
-					}
-				},
-				"man.gif": {
-					"tile": game.grid.tileWidth,
-					"tileh": game.grid.tileHeight,
-					"map": {
-						"Sprite_Man": [0,0]
-					}
-				}
-			}
-		};
 		Crafty.load(assets, function(){
 			Crafty.scene('Level_01');
 		});

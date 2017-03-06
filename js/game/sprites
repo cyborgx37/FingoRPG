@@ -1,5 +1,0 @@
-define(['libs/crafty', './gamecore'],function(Crafty,game){
-
-
-
-});

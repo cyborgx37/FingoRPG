@@ -1,4 +1,4 @@
-define(['libs/crafty', './gamecore'],function(Crafty,game){
+define(['libs/crafty', './gamecore', './assets'],function(Crafty,game){
 
 
 	var tileWidth = game.grid.tileWidth,
@@ -105,6 +105,8 @@ define(['libs/crafty', './gamecore'],function(Crafty,game){
 				.reel('PlayerMovingLeft',	1000, 0,  9, 8)
 				.reel('PlayerMovingDown',  	1000, 0, 10, 8)
 				.reel('PlayerMovingRight',  1000, 0, 11, 8);
+
+			window.console.log( this );
  
 			// Watch for a change of direction and switch animations accordingly
 			var animation_speed = 8;
@@ -118,8 +120,9 @@ define(['libs/crafty', './gamecore'],function(Crafty,game){
 				} else if (data.y < 0) {
 					this.animate('PlayerMovingUp', -1);
 				} else {
-					this.pauseAnimation();
-					this.resetAnimation();
+					window.console.log( this );
+					//this.pauseAnimation();
+					//this.resetAnimation();
 					this.animate('PlayerMovingDown', 0);
 				}
 			});
